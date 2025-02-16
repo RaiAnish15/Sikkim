@@ -8,7 +8,7 @@ IMAGE_PATH = os.getcwd()  # Current folder
 def load_image(image_name):
     image_file = os.path.join(IMAGE_PATH, image_name)
     if os.path.exists(image_file):
-        st.image(image_file, caption=image_name.replace(".png", "").replace("_", " ").title(), use_column_width=True)
+        st.image(image_file, caption=image_name.replace(".png", "").replace("_", " ").title(), use_container_width=True)
     else:
         st.warning(f"Image not found: {image_name}")
 
