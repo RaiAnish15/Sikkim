@@ -23,7 +23,7 @@ if option == "Meteorological Details":
     st.subheader("Select Meteorological Parameters")
     parameter = st.selectbox(
         "Choose a parameter:", 
-        ["Select an option", "Daily Discharge", "Monthly Discharge", "Monthly Change in Discharge", "Temperature", "Precipitation"]
+        ["Select an option", "Daily Discharge", "Monthly Discharge", "Change in Discharge", "Temperature", "Precipitation"]
     )
 
     # Display the corresponding image based on selection
