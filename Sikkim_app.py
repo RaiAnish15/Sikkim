@@ -1,8 +1,8 @@
 import streamlit as st
 import os
 
-# Define absolute path to your images directory
-IMAGE_PATH = "/absolute/path/to/your/image/"  # Change this to your actual path
+# Get the current directory where the script is located
+IMAGE_PATH = os.getcwd()  # Current folder
 
 # Function to load images safely
 def load_image(image_name):
