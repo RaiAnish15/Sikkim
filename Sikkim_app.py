@@ -4,12 +4,12 @@ import streamlit as st
 st.title("Interactive Dashboard")
 
 # Initial dropdown selection with a placeholder
-option = st.selectbox("Select an option:", ["Select an option", "Meteorological Details", "Analysis"])
+option = st.selectbox("Select an option:", ["Select an option", "Meteorological Details", "Analysis Details"])
 
 # Logic based on selection
 if option == "Meteorological Details":
     st.subheader("Select Meteorological Parameters")
-    parameter = st.selectbox("Choose a parameter:", ["Select an option", "Temperature", "Precipitation", "Humidity"])
+    parameter = st.selectbox("Choose a parameter:", ["Select an option", "Daily Discharge","Monthly Discharge","Monthly Change in discharge","Temperature", "Precipitation"])
 
     # Display the corresponding image based on selection
     if parameter != "Select an option":
@@ -17,7 +17,7 @@ if option == "Meteorological Details":
 
 elif option == "Analysis":
     st.subheader("Select Analysis Type")
-    analysis_type = st.selectbox("Choose an analysis:", ["Select an option", "Time Series Analysis", "Correlation Analysis", "Anomaly Detection"])
+    analysis_type = st.selectbox("Choose an analysis:", ["Select an option", "Conditional Volatility", "Forecasting using ARIMAX", "Forecasting using LSTM"])
 
     # Display the corresponding image based on selection
     if analysis_type != "Select an option":
