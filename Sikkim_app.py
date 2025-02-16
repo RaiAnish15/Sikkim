@@ -13,7 +13,7 @@ if option == "Meteorological Details":
 
     # Display the corresponding image based on selection
     if parameter != "Select an option":
-        st.image(f"images/{parameter.lower()}.png", caption=f"{parameter} Data", use_column_width=True)
+        st.image(f"{parameter.lower()}.png", caption=f"{parameter} Data", use_column_width=True)
 
 elif option == "Analysis":
     st.subheader("Select Analysis Type")
