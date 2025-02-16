@@ -3,20 +3,22 @@ import streamlit as st
 # Title of the dashboard
 st.title("Interactive Dashboard")
 
-# Initial dropdown selection
-option = st.selectbox("Select an option:", ["Meteorological Details", "Analysis"])
+# Initial dropdown selection with a placeholder
+option = st.selectbox("Select an option:", ["Select an option", "Meteorological Details", "Analysis"])
 
 # Logic based on selection
 if option == "Meteorological Details":
     st.subheader("Select Meteorological Parameters")
-    parameter = st.selectbox("Choose a parameter:", ["Temperature", "Precipitation", "Humidity"])
-    
-    # Display content based on selection
-    st.write(f"You selected {parameter}. Data visualization can be added here.")
+    parameter = st.selectbox("Choose a parameter:", ["Select an option", "Temperature", "Precipitation", "Humidity"])
+
+    # Display the corresponding image based on selection
+    if parameter != "Select an option":
+        st.image(f"images/{parameter.lower()}.png", caption=f"{parameter} Data", use_column_width=True)
 
 elif option == "Analysis":
     st.subheader("Select Analysis Type")
-    analysis_type = st.selectbox("Choose an analysis:", ["Time Series Analysis", "Correlation Analysis", "Anomaly Detection"])
-    
-    # Display content based on selection
-    st.write(f"You selected {analysis_type}. Analysis results can be displayed here.")
+    analysis_type = st.selectbox("Choose an analysis:", ["Select an option", "Time Series Analysis", "Correlation Analysis", "Anomaly Detection"])
+
+    # Display the corresponding image based on selection
+    if analysis_type != "Select an option":
+        st.image(f"images/{analysis_type.lower().replace(' ', '_')}.png", caption=f"{analysis_type} Results", use_column_width=True)
