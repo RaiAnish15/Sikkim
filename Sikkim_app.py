@@ -13,7 +13,7 @@ def load_image(image_name):
         st.warning(f"Image not found: {image_name}")
 
 # Title of the dashboard
-st.title("Interactive Dashboard")
+st.title("Sikkim")
 
 # Sidebar with dropdown selection
 st.sidebar.header("Options")
