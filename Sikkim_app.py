@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+from PIL import Image
 
 # Set page configuration
 st.set_page_config(page_title="Sikkim Hydrological Dashboard", layout="wide")
@@ -17,7 +18,7 @@ places = ["Singtam", "Rangpo", "Chumthang", "Melli"]
 categories = {
     "Water Discharge": ["Daily", "Monthly", "Change"],
     "Meteorological Variables": ["Precipitation", "Temperature"],
-    "Analysis": ["CONDITIONAL VOLATILITY", "ARIMAX", "LSTM"]
+    "Analysis": ["CONDITIONAL VOLATILITY","ARIMAX", "LSTM"]
 }
 
 # Dropdown for place selection in sidebar
@@ -36,8 +37,14 @@ if selected_place != "Select a Place":
             # Construct file path with "Sikkim" as the main folder
             file_path = f"Sikkim/{selected_place}/{selected_category}/{selected_subcategory}.png"
 
-            # Display the selected image
+            # Check if file exists
             if os.path.exists(file_path):
-                st.image(file_path, caption=f"{selected_place} - {selected_subcategory}", use_container_width=True)
+                # Open and resize image
+                img = Image.open(file_path)
+                fixed_size = (800, 600)  # Set a fixed size (Width x Height)
+                img = img.resize(fixed_size)
+
+                # Display resized image
+                st.image(img, caption=f"{selected_place} - {selected_subcategory}", use_container_width=True)
             else:
                 st.warning("Image not found! Please check if the file exists.")
