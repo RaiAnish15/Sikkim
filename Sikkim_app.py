@@ -12,7 +12,7 @@ st.title("Hydrological and Meteorological Dashboard - Sikkim")
 st.sidebar.header("Select Filters")
 
 # Define places
-places = ["Singtam", "Rangpo", "Chumthang", "Melli"]
+places = ["Singtam", "Rangpo", "Chungthang", "Melli"]
 
 # Define categories
 categories = {
