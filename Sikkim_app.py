@@ -41,7 +41,7 @@ if selected_place != "Select a Place":
             if os.path.exists(file_path):
                 # Open and resize image
                 img = Image.open(file_path)
-                fixed_size = (800, 600)  # Set a fixed size (Width x Height)
+                fixed_size = (800, 400)  # Set a fixed size (Width x Height)
                 img = img.resize(fixed_size)
 
                 # Display resized image
