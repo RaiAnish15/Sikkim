@@ -18,7 +18,7 @@ places = ["Singtam", "Rangpo", "Chungthang", "Melli"]
 categories = {
     "Water Discharge": ["Daily", "Monthly", "Change"],
     "Meteorological Variables": ["Precipitation", "Temperature"],
-    "Analysis": ["CONDITIONAL VOLATILITY","ARIMAX", "LSTM"]
+    "Analysis": ["CONDITIONAL VOLATILITY", "ARIMAX", "LSTM"]
 }
 
 # Dropdown for place selection in sidebar
@@ -39,12 +39,10 @@ if selected_place != "Select a Place":
 
             # Check if file exists
             if os.path.exists(file_path):
-                # Open and resize image
+                # Open image (No resizing, display in original size)
                 img = Image.open(file_path)
-                fixed_size = (800, 400)  # Set a fixed size (Width x Height)
-                img = img.resize(fixed_size)
 
-                # Display resized image
-                st.image(img, caption=f"{selected_place} - {selected_subcategory}", use_container_width=True)
+                # Display image in original size
+                st.image(img, caption=f"{selected_place} - {selected_subcategory}", use_container_width=False)
             else:
                 st.warning("Image not found! Please check if the file exists.")
